@@ -55,7 +55,7 @@ namespace Visitare
                 string pinName = ((CustomPin)s).Label;
                 // string pytanie = ((CustomPin)s).Question;
                 string opis = ((CustomPin)s).Address;
-                await DisplayAlert($"{pinName}, {e.Position.Latitude}, {e.Position.Longitude}", $"{opis}", "Anuluj");
+                await DisplayAlert($"Nazwa: {pinName}, Współrzędne: {e.Position.Latitude}, {e.Position.Longitude}", $"{opis}", "Anuluj");
                 // string odpowiedz = ((CustomPin)s).Answer;
                 /* if(await DisplayAlert($"{pinName}", $"{opis}","Quiz", "Anuluj"))
                  {

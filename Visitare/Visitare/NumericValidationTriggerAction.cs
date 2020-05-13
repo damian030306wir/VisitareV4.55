@@ -25,6 +25,7 @@ namespace Visitare
 
                 }
                 entry.TextColor = isValid ? Color.Default : Color.Red;
+                
             }
             
         }

@@ -19,6 +19,7 @@ namespace Visitare
         private Question question;
 
         private readonly UserQuiz pointsManager;
+       
 
         public bool Result { get; set; }
 
@@ -45,6 +46,23 @@ namespace Visitare
             Navigation.PopModalAsync();
         }
 
+        private async void myEntry(object sender, EventArgs e)
+        {
+
+
+                int response = int.Parse(odpowiedzPrawidlowa.Text);
+
+                if (response > 0 & response < 4)
+                {
+
+                }
+                else
+                {
+                    await DisplayAlert("Błąd", "Musisz podać odpowiedź z zakresu od 0 do 3", "OK");
+                 }
+            
+          
+        }
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
