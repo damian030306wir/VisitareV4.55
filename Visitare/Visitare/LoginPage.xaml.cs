@@ -34,12 +34,12 @@ namespace Visitare
         {
             var response = await _service.LoginAsync(login.Text, password.Text);
 
-            if (!string.IsNullOrEmpty(response))
-                await Navigation.PushAsync(new MainPage());
+           // if (!string.IsNullOrEmpty(response))
+             //   await Navigation.PushAsync(new MainPage());
                 
             
-            else
-                await DisplayAlert("Błędne dane", "Spróbuj ponownie", "OK");
+           // else
+             //   await DisplayAlert("Błędne dane", "Spróbuj ponownie", "OK");
             
 
         }

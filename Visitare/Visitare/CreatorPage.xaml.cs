@@ -18,6 +18,7 @@ namespace Visitare
     public partial class CreatorPage : ContentPage
     {
         public List<Points> routePoints = new List<Points>();
+
         public CreatorPage()
         {
             InitializeComponent();
@@ -54,7 +55,7 @@ namespace Visitare
                 string pinName = ((CustomPin)s).Label;
                 // string pytanie = ((CustomPin)s).Question;
                 string opis = ((CustomPin)s).Address;
-                await DisplayAlert($"{pinName}", $"{opis}", "Anuluj");
+                await DisplayAlert($"{pinName}, {e.Position.Latitude}, {e.Position.Longitude}", $"{opis}", "Anuluj");
                 // string odpowiedz = ((CustomPin)s).Answer;
                 /* if(await DisplayAlert($"{pinName}", $"{opis}","Quiz", "Anuluj"))
                  {
@@ -73,7 +74,12 @@ namespace Visitare
                 Name = nazwaEntry.Text,
                 Description = opisEntry.Text
             });
-
+            if(customMap.Pins.Count > 10 && routePoints.Count > 10)
+            {
+                await DisplayAlert("Uwaga!", "Można do trasy dodać maksymalnie 10 punktów", "Ok");
+                customMap.Pins.Remove(pin);
+            }
+           
             /*var json = JsonConvert.SerializeObject(new Points()
             {
                 X = e.Position.Latitude,
@@ -104,6 +110,10 @@ namespace Visitare
             {
                 await DisplayAlert("Błąd", "Podaj nazwę trasy", "Ok");
                 return;
+            }
+            if(routePoints.Count() > 11) // dodatkowe zabezpieczenie na przycisk, nie moze byc > 10 bo wyswietla niepotrzebnie błąd
+            {
+                await DisplayAlert("Błąd", "Można do trasy dodać maksymalnie 10 punktów", "Ok");
             }
             
             List<int> idList = new List<int>();

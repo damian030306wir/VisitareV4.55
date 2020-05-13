@@ -14,7 +14,7 @@
         <StackLayout HeightRequest="450">
             <local:CustomMap x:Name="customMap" Margin="2" IsShowingUser="true" MapClicked="OnMapClicked">
 
-            </local:CustomMap>
+            </local:CustomMap> 
 
             <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:" FontSize="Small" HorizontalTextAlignment="Center"/>
             <Entry x:Name="opisEntry" Placeholder="Opis punktu:" FontSize="Small" HorizontalTextAlignment="Center"/>

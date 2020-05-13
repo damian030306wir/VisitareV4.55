@@ -28,7 +28,7 @@ namespace Visitare
 
         private async void GetAll()
         {
-           
+            var token = Application.Current.Properties["MyToken"].ToString();
 
             HttpClient client = new HttpClient();
 

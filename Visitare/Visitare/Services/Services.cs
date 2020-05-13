@@ -43,7 +43,7 @@ namespace Visitare.Services
 
                         var Username = jwtDynamic.Value<string>("userName");
                         var AccessTokenExpirationDate = accessTokenExpiration;
-                        
+                        Application.Current.Properties["MyToken"] = $"{accessToken}";
                     }
                 }
                
