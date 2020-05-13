@@ -10,7 +10,7 @@
     <NavigationPage.TitleView>
         <Label Text="Kreator" TextColor="White" FontSize="Title" Margin="10,0"/>
     </NavigationPage.TitleView>
-    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical"> 
         <StackLayout HeightRequest="450">
             <local:CustomMap x:Name="customMap" Margin="2" IsShowingUser="true" MapClicked="OnMapClicked">
 
